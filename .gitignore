@@ -1,0 +1,7 @@
+.idea/
+.vagrant/
+/node_modules/
+
+/*.log
+*.sock
+.env

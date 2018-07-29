@@ -1,0 +1,62 @@
+body{
+	line-height:1;
+    font-family: 'Roboto Condensed', Tahoma, Arial;
+}
+
+#alert{
+	/*animation: fadeIn 1s;*/
+}
+
+#alert_box { 
+
+}
+
+#alert_txt { 
+	max-width:790px;
+	max-height:200px;
+	padding:10px;
+	background-color:white;
+	/* Center Div */
+	display:block;
+	margin: 0 auto;
+	box-shadow: 5px 5px 10px grey;
+	border-radius: 30px 30px;
+	
+	/*height: 100%;
+	width: 100%;
+	background-image: url("img/bubble.png");
+	background-repeat: no-repeat;
+    background-size: contain;
+	background-position: center;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 30px; 
+	*/
+}
+
+#text {
+  font-size:3vw;
+  color: black;
+  text-align:center;
+}
+
+
+#alert_img { 
+	max-height:700px;
+	display: block;
+	padding: 30px;
+    margin-left: auto;
+    margin-right: auto; 
+	background-repeat: no-repeat;
+    background-size: contain;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}

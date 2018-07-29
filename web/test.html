@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="alert">
+
+</div>
+<div class="actions">
+    <button id="add-event">Add alert</button>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $(function () {
+        let $alertBlock = $('#alert');
+
+        let rootPromise = Promise.resolve();
+        let alertCounter = 0;
+        let alerts = [];
+        $('#add-event').click(event => {
+            alerts.push(`Новый вопрос подъехал #${alertCounter}`);
+            alertCounter++;
+            rootPromise = rootPromise.then(showAlert)
+        });
+
+        function showAlert() {
+            return new Promise(resolve => {
+                let message = alerts.shift();
+                let count = alerts.length;
+
+                message += ` и еще ${count} в очереди`;
+                let interval = setInterval(() => {
+                    message += '!';
+                    $alertBlock.html(message);
+                }, 1000);
+
+                setTimeout(() => {
+                    clearInterval(interval);
+                    resolve()
+                }, 3000);
+            });
+        }
+    });
+
+
+</script>
+</body>
+</html>
